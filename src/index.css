@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Maestrale Luxury Experience - Ultra Premium Design System */
+
+@layer base {
+  :root {
+    /* Primary Colors - Maestrale Navy */
+    --maestrale-navy: 195 54% 23%;
+    --maestrale-deep-teal: 195 70% 17%;
+    
+    /* Accent Colors - Sardinian Gold */
+    --sardinian-gold: 40 44% 59%;
+    --champagne-gold: 43 40% 69%;
+    --gold-shimmer: 45 60% 75%;
+    
+    /* Background Colors */
+    --mediterranean-cream: 40 33% 95%;
+    --warm-ivory: 50 100% 99%;
+    --sardinian-sand: 40 28% 86%;
+    
+    /* Text */
+    --deep-charcoal: 0 0% 18%;
+    
+    /* Accent Palette */
+    --costa-turquoise: 175 48% 48%;
+    --sunset-coral: 18 68% 60%;
+    --olive-grove: 87 21% 45%;
+    --terracotta: 23 51% 53%;
+
+    /* Semantic Tokens */
+    --background: var(--warm-ivory);
+    --foreground: var(--deep-charcoal);
+
+    --card: var(--mediterranean-cream);
+    --card-foreground: var(--deep-charcoal);
+
+    --popover: var(--warm-ivory);
+    --popover-foreground: var(--deep-charcoal);
+
+    --primary: var(--maestrale-navy);
+    --primary-foreground: var(--warm-ivory);
+
+    --secondary: var(--sardinian-sand);
+    --secondary-foreground: var(--maestrale-navy);
+
+    --muted: var(--mediterranean-cream);
+    --muted-foreground: 195 20% 40%;
+
+    --accent: var(--sardinian-gold);
+    --accent-foreground: var(--maestrale-deep-teal);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
+    --ring: var(--sardinian-gold);
+
+    --radius: 0.25rem;
+
+    /* Ultra Premium Custom Properties */
+    --gold-gradient: linear-gradient(135deg, hsl(var(--sardinian-gold)) 0%, hsl(var(--champagne-gold)) 50%, hsl(var(--sardinian-gold)) 100%);
+    --gold-gradient-shimmer: linear-gradient(90deg, transparent 0%, hsl(var(--gold-shimmer)) 50%, transparent 100%);
+    --navy-gradient: linear-gradient(180deg, hsl(var(--maestrale-navy)) 0%, hsl(var(--maestrale-deep-teal)) 100%);
+    --cream-gradient: linear-gradient(180deg, hsl(var(--warm-ivory)) 0%, hsl(var(--mediterranean-cream)) 100%);
+    --luxury-overlay: linear-gradient(135deg, rgba(27, 75, 90, 0.03) 0%, rgba(201, 169, 98, 0.05) 100%);
+    
+    --shadow-elegant: 0 25px 80px -20px hsl(var(--maestrale-navy) / 0.12);
+    --shadow-gold: 0 15px 50px -15px hsl(var(--sardinian-gold) / 0.25);
+    --shadow-luxury: 0 40px 100px -30px hsl(var(--maestrale-navy) / 0.15), 0 10px 30px -10px hsl(var(--sardinian-gold) / 0.1);
+    --shadow-floating: 0 30px 60px -15px hsl(var(--maestrale-navy) / 0.2);
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-luxury: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    --background: var(--maestrale-deep-teal);
+    --foreground: var(--mediterranean-cream);
+    --card: var(--maestrale-navy);
+    --card-foreground: var(--mediterranean-cream);
+    --primary: var(--sardinian-gold);
+    --primary-foreground: var(--maestrale-deep-teal);
+    --secondary: 195 50% 25%;
+    --secondary-foreground: var(--mediterranean-cream);
+    --muted: 195 50% 20%;
+    --muted-foreground: 40 20% 70%;
+    --accent: var(--champagne-gold);
+    --accent-foreground: var(--maestrale-deep-teal);
+    --border: 195 30% 25%;
+    --input: 195 30% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    background: hsl(var(--sardinian-gold) / 0.3);
+    color: hsl(var(--maestrale-navy));
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--mediterranean-cream));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--sardinian-gold) / 0.4);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--sardinian-gold) / 0.6);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-script {
+    font-family: 'Pinyon Script', cursive;
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-navy {
+    background: var(--navy-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-gold {
+    background: var(--gold-gradient);
+  }
+
+  .bg-gradient-navy {
+    background: var(--navy-gradient);
+  }
+
+  .bg-gradient-cream {
+    background: var(--cream-gradient);
+  }
+
+  .bg-luxury-overlay {
+    background: var(--luxury-overlay);
+  }
+
+  /* Premium Shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+
+  /* Transitions */
+  .transition-elegant {
+    transition: var(--transition-elegant);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-luxury {
+    transition: var(--transition-luxury);
+  }
+
+  /* Luxury Typography */
+  .heading-hero {
+    @apply font-display text-5xl md:text-7xl lg:text-[6.5rem] font-light tracking-wide leading-[0.9];
+  }
+
+  .heading-section {
+    @apply font-display text-4xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.1];
+  }
+
+  .heading-subsection {
+    @apply font-display text-2xl md:text-4xl lg:text-5xl font-light;
+  }
+
+  .text-tagline {
+    @apply font-body text-[10px] md:text-xs uppercase tracking-[0.3em] font-medium;
+  }
+
+  .text-body-lg {
+    @apply font-body text-lg md:text-xl font-light leading-relaxed tracking-wide;
+  }
+
+  /* Decorative Elements */
+  .divider-gold {
+    @apply h-px bg-gradient-to-r from-transparent via-accent to-transparent;
+  }
+
+  .divider-navy {
+    @apply h-px bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+
+  .divider-vertical {
+    @apply w-px bg-gradient-to-b from-transparent via-accent to-transparent;
+  }
+
+  /* Premium Hover Effects */
+  .hover-lift {
+    @apply transition-luxury hover:-translate-y-2 hover:shadow-luxury;
+  }
+
+  .hover-glow {
+    @apply transition-luxury hover:shadow-gold;
+  }
+
+  .hover-scale {
+    @apply transition-luxury hover:scale-[1.02];
+  }
+
+  /* Gold Shimmer Effect */
+  .shimmer-gold {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-gold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--gold-shimmer) / 0.3) 50%, transparent 100%);
+    animation: shimmer 3s infinite;
+  }
+
+  /* Luxury Border */
+  .border-luxury {
+    position: relative;
+  }
+
+  .border-luxury::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, hsl(var(--sardinian-gold) / 0.3), hsl(var(--champagne-gold) / 0.1), hsl(var(--sardinian-gold) / 0.3)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
+  /* Noise Texture Overlay */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Premium Card */
+  .card-luxury {
+    @apply relative bg-background rounded-sm overflow-hidden;
+    box-shadow: 
+      0 0 0 1px hsl(var(--sardinian-gold) / 0.1),
+      0 25px 60px -15px hsl(var(--maestrale-navy) / 0.1);
+  }
+
+  /* Section Styling */
+  .section-luxury {
+    @apply relative py-32 md:py-48;
+  }
+
+  .section-navy {
+    @apply section-luxury bg-gradient-navy text-mediterranean-cream noise-overlay;
+  }
+
+  .section-cream {
+    @apply section-luxury bg-gradient-cream noise-overlay;
+  }
+
+  /* Chapter Indicator */
+  .chapter-indicator {
+    @apply inline-flex items-center gap-4 text-tagline mb-6;
+  }
+
+  .chapter-indicator::before,
+  .chapter-indicator::after {
+    content: '';
+    @apply w-8 h-px bg-current opacity-30;
+  }
+
+  /* Luxury Quote */
+  .quote-luxury {
+    @apply relative font-display text-2xl md:text-4xl lg:text-5xl font-light italic leading-relaxed;
+  }
+
+  .quote-luxury::before {
+    content: '"';
+    @apply absolute -left-4 md:-left-8 -top-4 font-script text-6xl md:text-8xl text-accent/30;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSoft 4s ease-in-out infinite;
+  }
+
+  .animate-reveal {
+    animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Marquee for luxury text */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Parallax Helper */
+.parallax-slow {
+  will-change: transform;
+}
