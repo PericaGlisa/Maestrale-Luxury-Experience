@@ -144,7 +144,7 @@ const BrandStory = () => {
         >
           <h3 className="text-tagline text-accent text-center mb-12">Osnovne Vrednosti</h3>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 auto-rows-fr">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -152,16 +152,16 @@ const BrandStory = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative"
+                className="group relative flex flex-col"
               >
-                <div className="relative text-center p-8 bg-background border border-border hover:border-sardinian-gold/30 transition-all duration-700 hover:-translate-y-2 hover:shadow-luxury">
+                <div className="relative text-center p-8 bg-background border border-border hover:border-sardinian-gold/30 transition-all duration-700 hover:-translate-y-2 hover:shadow-luxury flex flex-col flex-1">
                   {/* Icon */}
                   <span className="inline-block text-2xl text-sardinian-gold mb-4 group-hover:scale-110 transition-transform duration-500">
                     {value.icon}
                   </span>
                   
                   <h4 className="font-display text-xl text-primary mb-2">{value.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{value.desc}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed flex-1">{value.desc}</p>
                   
                   {/* Hover accent line */}
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-gradient-gold group-hover:w-3/4 transition-all duration-700" />

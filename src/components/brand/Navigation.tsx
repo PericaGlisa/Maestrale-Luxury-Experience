@@ -94,7 +94,7 @@ const Navigation = () => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -125,7 +125,7 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden relative w-10 h-10 flex items-center justify-center ${
+              className={`xl:hidden relative w-10 h-10 flex items-center justify-center ${
                 isScrolled ? "text-foreground" : "text-mediterranean-cream"
               }`}
               aria-label="Toggle menu"
@@ -175,7 +175,7 @@ const Navigation = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-maestrale-navy/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-maestrale-navy/60 backdrop-blur-sm xl:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -185,7 +185,7 @@ const Navigation = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-sm bg-background shadow-2xl lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-sm bg-background shadow-2xl xl:hidden"
             >
               {/* Close Button */}
               <button

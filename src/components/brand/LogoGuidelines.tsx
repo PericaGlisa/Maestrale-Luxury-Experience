@@ -157,8 +157,8 @@ const LogoGuidelines = () => {
                     { label: "Samo Simbol (Štampa)", value: "10mm" },
                   ].map((spec) => (
                     <div key={spec.label} className="flex justify-between items-center py-4 border-b border-border">
-                      <span className="text-sm text-foreground">{spec.label}</span>
-                      <span className="font-mono text-sm text-accent">{spec.value}</span>
+                      <span className="text-xs sm:text-sm text-foreground">{spec.label}</span>
+                      <span className="font-mono text-xs sm:text-sm text-accent">{spec.value}</span>
                     </div>
                   ))}
                 </div>
