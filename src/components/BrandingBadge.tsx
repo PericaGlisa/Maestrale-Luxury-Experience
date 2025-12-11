@@ -18,16 +18,7 @@ const BrandingBadge: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Auto-expand on mobile after short delay
-  useEffect(() => {
-    if (isMobile) {
-      const timer = setTimeout(() => {
-        setIsExpanded(true);
-      }, 2000);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [isMobile]);
+
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (isMobile) {

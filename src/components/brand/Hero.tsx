@@ -114,12 +114,14 @@ const Hero = () => {
           privatne trenutke luksuza koji ostaju urezani u sećanje.
         </motion.p>
 
-        {/* CTA Button with shimmer effect */}
+        {/* CTA Button and Scroll Indicator Container */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center gap-6 md:gap-8"
         >
+          {/* CTA Button with shimmer effect */}
           <a 
             href="#brand-story" 
             className="group relative inline-flex items-center justify-center h-16 px-14 overflow-hidden"
@@ -135,26 +137,24 @@ const Hero = () => {
               Istraži brend
             </span>
           </a>
-        </motion.div>
-      </motion.div>
 
-      {/* Elegant Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 pointer-events-none"
-      >
-        <div className="flex flex-col items-center gap-4 text-mediterranean-cream/50">
-          <span className="text-[10px] uppercase tracking-[0.4em] font-light mr-[-0.4em]">Skroluj za više</span>
+          {/* Scroll Indicator - positioned below CTA button on all devices */}
           <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-px h-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="flex flex-col items-center gap-4 text-mediterranean-cream/50"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-sardinian-gold to-transparent" />
+            <span className="text-[10px] uppercase tracking-[0.4em] font-light mr-[-0.4em]">Skroluj za više</span>
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-px h-16"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-sardinian-gold to-transparent" />
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* Bottom gradient fade */}
