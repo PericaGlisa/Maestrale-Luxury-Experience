@@ -60,7 +60,7 @@ const BrandingBadge: React.FC = () => {
         className={`relative flex items-center justify-center ${isMobile ? 'w-10 h-10' : 'w-9 h-9'} bg-white/5 border-r border-white/5 group-hover:bg-white/10 transition-colors ${isMobile ? 'active:bg-white/20' : ''} cursor-pointer align-middle`}
         onClick={handleLogoClick}
       >
-        <span className="text-[14px] font-bold text-[#3B82F6] group-hover:text-blue-300 transition-colors duration-300 leading-none flex items-center justify-center w-full h-full">
+        <span className="text-[14px] font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-blue-400 group-hover:to-blue-500 transition-all duration-300 leading-none flex items-center justify-center w-full h-full">
           @
         </span>
       </div>
@@ -95,7 +95,16 @@ const BrandingBadge: React.FC = () => {
           className="ml-2"
           onClick={handleLinkClick}
         >
-          <ArrowUpRight className={`w-3 h-3 text-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} />
+          <svg className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} fill="none" stroke="url(#blue-gradient)" viewBox="0 0 24 24" strokeWidth={2.5}>
+            <defs>
+              <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#60A5FA" />
+                <stop offset="50%" stopColor="#3B82F6" />
+                <stop offset="100%" stopColor="#2563EB" />
+              </linearGradient>
+            </defs>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
         </a>
       </motion.div>
     </motion.div>
