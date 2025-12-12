@@ -125,29 +125,29 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`xl:hidden relative w-10 h-10 flex items-center justify-center ${
+              className={`xl:hidden relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:bg-white/10 group ${
                 isScrolled ? "text-foreground" : "text-mediterranean-cream"
               }`}
               aria-label="Toggle menu"
             >
-              <div className="relative w-6 h-5 flex flex-col justify-between">
+              <div className="relative w-5 h-4 flex flex-col justify-between">
                 <motion.span
                   animate={{
                     rotate: isMobileMenuOpen ? 45 : 0,
-                    y: isMobileMenuOpen ? 8 : 0,
+                    y: isMobileMenuOpen ? 7 : 0,
                   }}
-                  className="block h-0.5 w-full bg-current origin-center transition-colors"
+                  className="block h-0.5 w-full bg-current origin-center transition-all duration-300 rounded-full group-hover:scale-x-110"
                 />
                 <motion.span
                   animate={{ opacity: isMobileMenuOpen ? 0 : 1, scaleX: isMobileMenuOpen ? 0 : 1 }}
-                  className="block h-0.5 w-full bg-current"
+                  className="block h-0.5 w-full bg-current transition-all duration-300 rounded-full group-hover:scale-x-110"
                 />
                 <motion.span
                   animate={{
                     rotate: isMobileMenuOpen ? -45 : 0,
-                    y: isMobileMenuOpen ? -8 : 0,
+                    y: isMobileMenuOpen ? -7 : 0,
                   }}
-                  className="block h-0.5 w-full bg-current origin-center transition-colors"
+                  className="block h-0.5 w-full bg-current origin-center transition-all duration-300 rounded-full group-hover:scale-x-110"
                 />
               </div>
             </button>
@@ -190,11 +190,11 @@ const Navigation = () => {
               {/* Close Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-foreground hover:text-accent transition-colors"
+                className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-foreground hover:text-accent transition-all duration-300 rounded-full hover:bg-white/5"
                 aria-label="Close menu"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" className="transition-transform duration-300 hover:rotate-90" />
                 </svg>
               </button>
 

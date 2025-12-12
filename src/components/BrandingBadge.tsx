@@ -18,6 +18,17 @@ const BrandingBadge: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
+  };
+
+  const handleLinkClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Allow the link to open in new tab
+  };
+
 
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -36,10 +47,7 @@ const BrandingBadge: React.FC = () => {
   };
 
   return (
-    <motion.a
-      href="https://petarmiodrag2.xyz"
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
       initial="idle"
       whileHover={!isMobile ? "hover" : undefined}
       animate={isExpanded ? "hover" : "idle"}
@@ -47,9 +55,14 @@ const BrandingBadge: React.FC = () => {
       onClick={handleClick}
       className="fixed bottom-4 right-4 z-[100] flex items-center gap-0 overflow-hidden rounded-full bg-[#020617]/80 border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-xl cursor-pointer group select-none touch-manipulation"
     >
-      {/* Logo Icon Container */}
-      <div className={`relative flex items-center justify-center ${isMobile ? 'w-10 h-10' : 'w-9 h-9'} bg-white/5 border-r border-white/5 group-hover:bg-white/10 transition-colors ${isMobile ? 'active:bg-white/20' : ''}`}>
-        <div className={`w-4 h-4 bg-gradient-to-tr from-[#3B82F6] to-blue-400 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-500 ${isMobile ? 'group-active:rotate-180' : ''}`} />
+      {/* @ Symbol Container */}
+      <div 
+        className={`relative flex items-center justify-center ${isMobile ? 'w-10 h-10' : 'w-9 h-9'} bg-white/5 border-r border-white/5 group-hover:bg-white/10 transition-colors ${isMobile ? 'active:bg-white/20' : ''} cursor-pointer align-middle`}
+        onClick={handleLogoClick}
+      >
+        <span className="text-[14px] font-bold text-[#3B82F6] group-hover:text-blue-300 transition-colors duration-300 leading-none flex items-center justify-center w-full h-full">
+          @
+        </span>
       </div>
 
       {/* Expanding Text Section */}
@@ -61,17 +74,31 @@ const BrandingBadge: React.FC = () => {
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="flex items-center overflow-hidden whitespace-nowrap"
       >
-        <div className={`${isMobile ? 'pl-4' : 'pl-3'} flex flex-col justify-center h-full`}>
+        <a 
+          href="https://petarmiodrag2.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${isMobile ? 'pl-4' : 'pl-3'} flex flex-col justify-center h-full text-decoration-none`}
+          onClick={handleLinkClick}
+        >
           <span className="text-[8px] uppercase tracking-widest text-slate-400 font-bold leading-none mb-0.5">
             Designed by
           </span>
           <span className="text-[10px] font-display font-bold text-white tracking-wide leading-none">
             petarmiodrag2.xyz
           </span>
-        </div>
-        <ArrowUpRight className={`w-3 h-3 text-[#3B82F6] ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} />
+        </a>
+        <a 
+          href="https://petarmiodrag2.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-2"
+          onClick={handleLinkClick}
+        >
+          <ArrowUpRight className={`w-3 h-3 text-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} />
+        </a>
       </motion.div>
-    </motion.a>
+    </motion.div>
   );
 };
 
