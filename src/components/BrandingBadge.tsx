@@ -57,10 +57,10 @@ const BrandingBadge: React.FC = () => {
     >
       {/* @ Symbol Container */}
       <div 
-        className={`relative flex items-center justify-center ${isMobile ? 'w-10 h-10' : 'w-10 h-10'} bg-white/5 border-r border-white/5 group-hover:bg-white/10 transition-colors ${isMobile ? 'active:bg-white/20' : ''} cursor-pointer align-middle`}
+        className={`relative flex items-center justify-center ${isMobile ? 'w-10 h-10' : 'w-9 h-9'} bg-white/5 border-r border-white/5 group-hover:bg-white/10 transition-colors ${isMobile ? 'active:bg-white/20' : ''} cursor-pointer align-middle`}
         onClick={handleLogoClick}
       >
-        <span className="text-[18px] font-medium bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-blue-400 group-hover:to-blue-500 transition-all duration-300 leading-none flex items-center justify-center w-full h-full" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 600 }}>
+        <span className="text-[15px] font-medium bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:via-blue-400 group-hover:to-blue-500 transition-all duration-300 flex items-center justify-center w-full h-full" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, lineHeight: '0.9', verticalAlign: 'middle' }}>
           @
         </span>
       </div>
@@ -81,10 +81,10 @@ const BrandingBadge: React.FC = () => {
           className={`${isMobile ? 'pl-4' : 'pl-3'} flex flex-col justify-center h-full text-decoration-none`}
           onClick={handleLinkClick}
         >
-          <span className="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-light leading-none mb-1" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.15em' }}>
+          <span className="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-light leading-none mb-1" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em', fontWeight: 400 }}>
             Crafted by
           </span>
-          <span className="text-[11px] font-display font-medium text-white tracking-normal leading-none" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 500, letterSpacing: '0.02em' }}>
+          <span className="text-[11px] font-display font-medium text-white tracking-normal leading-none" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, letterSpacing: '0.02em' }}>
             petarmiodrag2.xyz
           </span>
         </a>
@@ -95,7 +95,7 @@ const BrandingBadge: React.FC = () => {
           className="ml-2"
           onClick={handleLinkClick}
         >
-          <svg className={`w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} fill="none" stroke="url(#blue-gradient)" viewBox="0 0 24 24" strokeWidth={2} style={{ filter: 'drop-shadow(0 0 1px rgba(59, 130, 246, 0.2))' }}>
+          <svg className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 ${isMobile ? 'scale-125' : ''}`} fill="none" stroke="url(#blue-gradient)" viewBox="0 0 24 24" strokeWidth={2} style={{ filter: 'drop-shadow(0 0 1px rgba(59, 130, 246, 0.2))' }}>
             <defs>
               <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#60A5FA" />
