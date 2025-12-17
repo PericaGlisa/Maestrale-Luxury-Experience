@@ -87,8 +87,8 @@ const Navigation = () => {
               <img
                 src={logo}
                 alt="Maestrale Luxury Experience"
-                className={`h-20 sm:h-24 md:h-28 lg:h-24 xl:h-28 w-auto transition-all duration-500 ${
-                  isScrolled ? "" : "brightness-0 invert drop-shadow-lg"
+                className={`h-32 sm:h-36 md:h-40 lg:h-36 xl:h-40 w-auto transition-all duration-500 ${
+                  isScrolled ? "drop-shadow-lg" : "brightness-0 invert drop-shadow-2xl"
                 }`}
               />
             </motion.a>
@@ -201,7 +201,7 @@ const Navigation = () => {
               <div className="flex flex-col h-full pt-20 pb-8 px-6 sm:px-8 overflow-y-auto">
                 {/* Mobile Logo */}
                 <div className="mb-8 sm:mb-12 flex-shrink-0">
-                  <img src={logo} alt="Maestrale" className="h-20 sm:h-24 w-auto" />
+                  <img src={logo} alt="Maestrale" className="h-32 sm:h-36 w-auto drop-shadow-lg" />
                 </div>
 
                 {/* Navigation Links */}

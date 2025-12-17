@@ -8,7 +8,7 @@ const Footer = () => {
       
       <div className="container max-w-7xl mx-auto px-6 relative">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col items-center text-center">
-          <motion.img src={logo} alt="Maestrale" className="w-32 mb-8" whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} />
+          <motion.img src={logo} alt="Maestrale" className="w-48 sm:w-56 mb-8 drop-shadow-lg" whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} />
           
           <p className="font-script text-4xl text-accent mb-4">Smernice Brenda</p>
           <p className="text-sm text-muted-foreground mb-12">Verzija 1.0 — Decembar 2025</p>
