@@ -66,14 +66,14 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pt-4 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pt-8 pb-6 ${
           isScrolled
             ? "bg-background/95 backdrop-blur-xl shadow-luxury border-b border-sardinian-gold/10"
             : "bg-transparent"
         }`}
       >
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-24 sm:h-28">
             {/* Logo */}
             <motion.a
               href="#"
@@ -81,7 +81,7 @@ const Navigation = () => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 mt-4 mb-4"
               whileHover={{ scale: 1.02 }}
             >
               <img
